@@ -45,8 +45,8 @@ A smart web application that automatically parses PDF syllabi and converts assig
 
 ```bash
 # Clone the repository
-git clone https://github.com/lamarana20/syllabus-calendar.git
-cd syllabus-calendar
+git clone https://github.com/lamarana20/syllabus-calendar-test.git
+cd syllabus-calendar-test.git
 
 # Install dependencies
 npm install
@@ -209,8 +209,8 @@ MIT License - see LICENSE file for details.
 
 ## 🏆 Competition Submission
 
-**Built by:** [Your Name]  
-**For:** Lawbandit Programming Competition  
+**Built by:** Mamadou Lamarana  Diallo
+**For:** Lawbandit Programming Competition  intership
 **Category:** Syllabus → Calendar Feature  
 **Tech Stack:** TypeScript, Next.js, React, Tailwind CSS  
 **Deployment:** Vercel  
@@ -221,6 +221,18 @@ MIT License - see LICENSE file for details.
 - Professional UI/UX with dark mode
 - Export functionality with .ics support
 - Comprehensive error handling
+
+## 🎓 Development Process
+
+This project was built using extensive research and learning from multiple sources:
+
+- **AI Assistance**: Leveraged AI tools for code generation, debugging, and architectural decisions
+- **Google Search**: Comprehensive research on TypeScript, Next.js best practices, and PDF parsing libraries
+- **YouTube Tutorials**: Followed video tutorials for React patterns, Tailwind CSS techniques, and calendar integration(traversy)
+- **Documentation**: Deep dive into official docs for FullCalendar, pdf-parse, and other libraries
+- **Stack Overflow**: Community-driven solutions for specific implementation challenges
+
+The combination of AI-powered development, traditional research methods, and community resources enabled rapid prototyping and feature implementation for this competition entry.
 
 ---
 

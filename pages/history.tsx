@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
+import { FaFileAlt, FaQuestionCircle, FaClipboardList, FaBullseye, FaGraduationCap, FaBuilding, FaCalendarDay, FaCalendarAlt } from "react-icons/fa";
 import { EventItem } from "../utils/parseSyllabus";
 import { loadEventsFromStorage, clearStorageEvents, saveEventsToStorage } from "../utils/localStorage";
 
@@ -96,14 +97,14 @@ export default function History() {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "exam": return "📝";
-      case "quiz": return "❓";
-      case "assignment": return "📋";
-      case "project": return "🎯";
-      case "lecture": return "🎓";
-      case "office-hours": return "🏢";
-      case "holiday": return "🎉";
-      default: return "📅";
+      case "exam": return <FaFileAlt className="text-red-500" />;
+      case "quiz": return <FaQuestionCircle className="text-orange-500" />;
+      case "assignment": return <FaClipboardList className="text-blue-500" />;
+      case "project": return <FaBullseye className="text-purple-500" />;
+      case "lecture": return <FaGraduationCap className="text-green-500" />;
+      case "office-hours": return <FaBuilding className="text-indigo-500" />;
+      case "holiday": return <FaCalendarDay className="text-pink-500" />;
+      default: return <FaCalendarAlt className="text-gray-500" />;
     }
   };
 

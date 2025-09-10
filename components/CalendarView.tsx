@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import React from "react";
+import { FaFileAlt, FaQuestionCircle, FaClipboardList, FaBullseye, FaGraduationCap, FaCalendarAlt, FaChartBar } from "react-icons/fa";
 import { EventItem } from "../utils/parseSyllabus";
 
 const FullCalendar = dynamic(() => import("@fullcalendar/react"), { ssr: false });
@@ -52,12 +53,12 @@ export default function CalendarView({ events }: Props) {
         <h4 className="text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2 sm:mb-3">Event Categories</h4>
         <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
           {[
-            { name: "Exams", color: "#ef4444", icon: "📝" },
-            { name: "Quizzes", color: "#f97316", icon: "❓" },
-            { name: "Assignments", color: "#3b82f6", icon: "📋" },
-            { name: "Projects", color: "#8b5cf6", icon: "🎯" },
-            { name: "Lectures", color: "#10b981", icon: "🎓" },
-            { name: "Other", color: "#6b7280", icon: "📅" }
+            { name: "Exams", color: "#ef4444", icon: <FaFileAlt /> },
+            { name: "Quizzes", color: "#f97316", icon: <FaQuestionCircle /> },
+            { name: "Assignments", color: "#3b82f6", icon: <FaClipboardList /> },
+            { name: "Projects", color: "#8b5cf6", icon: <FaBullseye /> },
+            { name: "Lectures", color: "#10b981", icon: <FaGraduationCap /> },
+            { name: "Other", color: "#6b7280", icon: <FaCalendarAlt /> }
           ].map((category) => (
             <div
               key={category.name}
@@ -104,10 +105,10 @@ export default function CalendarView({ events }: Props) {
       {/* Statistics */}
       <div className="mt-4 sm:mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
         {[
-          { name: "Total Events", count: events.length, color: "from-blue-500 to-cyan-500", icon: "📊" },
-          { name: "Exams", count: events.filter(e => e.category === "exam").length, color: "from-red-500 to-pink-500", icon: "📝" },
-          { name: "Assignments", count: events.filter(e => e.category === "assignment").length, color: "from-blue-500 to-indigo-500", icon: "📋" },
-          { name: "Projects", count: events.filter(e => e.category === "project").length, color: "from-purple-500 to-violet-500", icon: "🎯" }
+          { name: "Total Events", count: events.length, color: "from-blue-500 to-cyan-500", icon: <FaChartBar /> },
+          { name: "Exams", count: events.filter(e => e.category === "exam").length, color: "from-red-500 to-pink-500", icon: <FaFileAlt /> },
+          { name: "Assignments", count: events.filter(e => e.category === "assignment").length, color: "from-blue-500 to-indigo-500", icon: <FaClipboardList /> },
+          { name: "Projects", count: events.filter(e => e.category === "project").length, color: "from-purple-500 to-violet-500", icon: <FaBullseye /> }
         ].map((stat) => (
           <div
             key={stat.name}

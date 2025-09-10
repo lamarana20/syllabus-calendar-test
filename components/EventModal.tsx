@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { HiX } from "react-icons/hi";
+import { FaFileAlt, FaQuestionCircle, FaClipboardList, FaBullseye, FaGraduationCap, FaBuilding, FaCalendarDay, FaMapPin } from "react-icons/fa";
 import { EventItem, EventCategory } from "../utils/parseSyllabus";
 
 type Props = {
@@ -53,15 +55,15 @@ export default function EventModal({ isOpen, event, onClose, onSave, onDelete }:
 
   if (!isOpen) return null;
 
-  const categories: { value: EventCategory; label: string; icon: string }[] = [
-    { value: "exam", label: "Exam", icon: "📝" },
-    { value: "quiz", label: "Quiz", icon: "❓" },
-    { value: "assignment", label: "Assignment", icon: "📋" },
-    { value: "project", label: "Project", icon: "🎯" },
-    { value: "lecture", label: "Lecture", icon: "🎓" },
-    { value: "office-hours", label: "Office Hours", icon: "🏢" },
-    { value: "holiday", label: "Holiday", icon: "🎉" },
-    { value: "other", label: "Other", icon: "📌" },
+  const categories: { value: EventCategory; label: string; icon: React.ReactNode }[] = [
+    { value: "exam", label: "Exam", icon: <FaFileAlt className="text-red-500" /> },
+    { value: "quiz", label: "Quiz", icon: <FaQuestionCircle className="text-orange-500" /> },
+    { value: "assignment", label: "Assignment", icon: <FaClipboardList className="text-blue-500" /> },
+    { value: "project", label: "Project", icon: <FaBullseye className="text-purple-500" /> },
+    { value: "lecture", label: "Lecture", icon: <FaGraduationCap className="text-green-500" /> },
+    { value: "office-hours", label: "Office Hours", icon: <FaBuilding className="text-indigo-500" /> },
+    { value: "holiday", label: "Holiday", icon: <FaCalendarDay className="text-pink-500" /> },
+    { value: "other", label: "Other", icon: <FaMapPin className="text-gray-500" /> },
   ];
 
   return (
@@ -75,9 +77,7 @@ export default function EventModal({ isOpen, event, onClose, onSave, onDelete }:
             onClick={onClose}
             className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <HiX className="w-5 h-5" />
           </button>
         </div>
 

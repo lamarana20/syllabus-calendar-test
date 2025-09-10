@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { HiSearch } from "react-icons/hi";
+import { FaCalendarAlt, FaFileAlt, FaQuestionCircle, FaClipboardList, FaBullseye, FaGraduationCap, FaBuilding, FaCalendarDay, FaMapPin } from "react-icons/fa";
 import { EventItem, EventCategory } from "../utils/parseSyllabus";
 
 type Props = {
@@ -62,16 +64,16 @@ export default function EventSearch({ events, onFilteredEvents }: Props) {
     onFilteredEvents(events);
   };
 
-  const categories: { value: EventCategory | "all"; label: string; icon: string }[] = [
-    { value: "all", label: "All Events", icon: "📅" },
-    { value: "exam", label: "Exams", icon: "📝" },
-    { value: "quiz", label: "Quizzes", icon: "❓" },
-    { value: "assignment", label: "Assignments", icon: "📋" },
-    { value: "project", label: "Projects", icon: "🎯" },
-    { value: "lecture", label: "Lectures", icon: "🎓" },
-    { value: "office-hours", label: "Office Hours", icon: "🏢" },
-    { value: "holiday", label: "Holidays", icon: "🎉" },
-    { value: "other", label: "Other", icon: "📌" },
+  const categories: { value: EventCategory | "all"; label: string; icon: React.ReactNode }[] = [
+    { value: "all", label: "All Events", icon: <FaCalendarAlt className="text-gray-600 dark:text-gray-400" /> },
+    { value: "exam", label: "Exams", icon: <FaFileAlt className="text-red-500" /> },
+    { value: "quiz", label: "Quizzes", icon: <FaQuestionCircle className="text-orange-500" /> },
+    { value: "assignment", label: "Assignments", icon: <FaClipboardList className="text-blue-500" /> },
+    { value: "project", label: "Projects", icon: <FaBullseye className="text-purple-500" /> },
+    { value: "lecture", label: "Lectures", icon: <FaGraduationCap className="text-green-500" /> },
+    { value: "office-hours", label: "Office Hours", icon: <FaBuilding className="text-indigo-500" /> },
+    { value: "holiday", label: "Holidays", icon: <FaCalendarDay className="text-pink-500" /> },
+    { value: "other", label: "Other", icon: <FaMapPin className="text-gray-500" /> },
   ];
 
   return (
@@ -91,9 +93,7 @@ export default function EventSearch({ events, onFilteredEvents }: Props) {
       {/* Search Input */}
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <HiSearch className="h-5 w-5 text-gray-400" />
         </div>
         <input
           type="text"
