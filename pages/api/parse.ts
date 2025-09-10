@@ -6,7 +6,7 @@ import { parseSyllabus } from "../../utils/parseSyllabus";
 
 export const config = {
   api: {
-    bodyParser: false, // nécessaire pour upload de fichiers
+    bodyParser: false, 
   },
 };
 
